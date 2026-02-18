@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salahuddin Ahmed School and College</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { primary: '#0f172a', secondary: '#f59e0b', accent: '#3b82f6' }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans text-slate-800 bg-slate-50 antialiased flex flex-col min-h-screen">
+
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <i data-lucide="graduation-cap" class="h-8 w-8 text-secondary"></i>
+                        <span class="font-bold text-2xl text-primary">SASC</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-slate-600 hover:text-secondary font-medium">Home</a>
+                    <a href="about.html" class="text-slate-600 hover:text-secondary font-medium">About Us</a>
+                    <a href="academics.html" class="text-slate-600 hover:text-secondary font-medium">Academics</a>
+                    <a href="admission.html" class="text-slate-600 hover:text-secondary font-medium">Admission</a>
+                    <a href="contact.html" class="text-slate-600 hover:text-secondary font-medium">Contact</a>
+                    <a href="login.html"
+                        class="bg-primary text-white px-5 py-2 rounded-lg font-medium hover:bg-slate-800 transition">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        <div class="bg-primary py-16 text-center text-white">
+            <h1 class="text-4xl font-bold mb-2">Admissions</h1>
+            <p class="text-slate-300">Join the SASC Family. Apply for Academic Year 2024.</p>
+        </div>
+
+        <section class="max-w-4xl mx-auto px-4 py-16">
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold text-primary mb-8 text-center">Application Process</h2>
+                <div class="grid md:grid-cols-3 gap-6 text-center">
+                    <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100 relative" data-aos="fade-up">
+                        <div
+                            class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                            1</div>
+                        <h3 class="font-bold mb-2">Fill Form</h3>
+                        <p class="text-sm text-slate-500">Collect form from office or download online.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <div
+                            class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                            2</div>
+                        <h3 class="font-bold mb-2">Admission Test</h3>
+                        <p class="text-sm text-slate-500">Appear for the written and oral entrance exam.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <div
+                            class="w-10 h-10 bg-secondary text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                            3</div>
+                        <h3 class="font-bold mb-2">Registration</h3>
+                        <p class="text-sm text-slate-500">Submit documents and pay fees to confirm seat.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg border border-slate-100 p-8" data-aos="fade-up">
+                <h3 class="text-xl font-bold text-primary mb-6">Fee Structure (Monthly)</h3>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center pb-2 border-b border-slate-100">
+                        <span class="text-slate-600">Primary Section (Class 1-5)</span>
+                        <span class="font-bold text-primary">1,500 BDT</span>
+                    </div>
+                    <div class="flex justify-between items-center pb-2 border-b border-slate-100">
+                        <span class="text-slate-600">Secondary Section (Class 6-10)</span>
+                        <span class="font-bold text-primary">2,200 BDT</span>
+                    </div>
+                    <div class="flex justify-between items-center pb-2 border-b border-slate-100">
+                        <span class="text-slate-600">Higher Secondary (Science)</span>
+                        <span class="font-bold text-primary">3,500 BDT</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-slate-600">Higher Secondary (Business/Arts)</span>
+                        <span class="font-bold text-primary">3,000 BDT</span>
+                    </div>
+                </div>
+                <div class="mt-8 text-center">
+                    <button
+                        class="bg-secondary hover:bg-amber-600 text-white px-8 py-3 rounded-lg font-bold transition flex items-center gap-2 mx-auto">
+                        <i data-lucide="file-text" class="w-5 h-5"></i> Download Admission Form
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-primary text-slate-300 py-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2023 Salahuddin Ahmed School and College.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        lucide.createIcons();
+        AOS.init({ once: true, offset: 50, duration: 800 });
+    </script>
+</body>
+
+</html>

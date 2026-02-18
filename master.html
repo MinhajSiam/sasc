@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salahuddin Ahmed School and College</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { primary: '#0f172a', secondary: '#f59e0b', accent: '#3b82f6' }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans text-slate-800 bg-slate-50 antialiased flex flex-col min-h-screen">
+
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <i data-lucide="graduation-cap" class="h-8 w-8 text-secondary"></i>
+                        <span class="font-bold text-2xl text-primary">SASC</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-slate-600 hover:text-secondary font-medium">Home</a>
+                    <a href="about.html" class="text-slate-600 hover:text-secondary font-medium">About Us</a>
+                    <a href="academics.html" class="text-slate-600 hover:text-secondary font-medium">Academics</a>
+                    <a href="admission.html" class="text-slate-600 hover:text-secondary font-medium">Admission</a>
+                    <a href="contact.html" class="text-slate-600 hover:text-secondary font-medium">Contact</a>
+                    <a href="login.html"
+                        class="bg-primary text-white px-5 py-2 rounded-lg font-medium hover:bg-slate-800 transition">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+
+    </main>
+    <footer class="bg-primary text-slate-300 py-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2023 Salahuddin Ahmed School and College.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        lucide.createIcons();
+        AOS.init({ once: true, offset: 50, duration: 800 });
+    </script>
+</body>
+
+</html>
