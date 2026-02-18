@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salahuddin Ahmed School and College</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { primary: '#0f172a', secondary: '#f59e0b', accent: '#3b82f6' }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans text-slate-800 bg-slate-50 antialiased flex flex-col min-h-screen">
+
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <i data-lucide="graduation-cap" class="h-8 w-8 text-secondary"></i>
+                        <span class="font-bold text-2xl text-primary">SASC</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-slate-600 hover:text-secondary font-medium">Home</a>
+                    <a href="about.html" class="text-slate-600 hover:text-secondary font-medium">About Us</a>
+                    <a href="academics.html" class="text-slate-600 hover:text-secondary font-medium">Academics</a>
+                    <a href="admission.html" class="text-slate-600 hover:text-secondary font-medium">Admission</a>
+                    <a href="contact.html" class="text-slate-600 hover:text-secondary font-medium">Contact</a>
+                    <a href="login.html"
+                        class="bg-primary text-white px-5 py-2 rounded-lg font-medium hover:bg-slate-800 transition">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        <div class="bg-primary py-16 text-center text-white">
+            <h1 class="text-4xl font-bold mb-2">About Us</h1>
+            <p class="text-slate-300">Know more about our history, mission, and vision.</p>
+        </div>
+
+        <section class="max-w-7xl mx-auto px-4 py-16 space-y-20">
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100" data-aos="fade-right">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="target" class="text-primary w-6 h-6"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-primary mb-4">Our Mission</h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        To provide a safe learning environment that encourages academic excellence, creativity, and
+                        moral integrity. We aim to empower students with the skills necessary to thrive in a global
+                        society.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100" data-aos="fade-left">
+                    <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="eye" class="text-secondary w-6 h-6"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-primary mb-4">Our Vision</h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        To be a leading educational institution in Bangladesh, recognized for producing enlightened
+                        individuals who contribute positively to the nation and the world.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-12 items-center" data-aos="fade-up">
+                <div class="w-full md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="School History" class="rounded-2xl shadow-lg">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-secondary font-bold uppercase tracking-wide text-sm mb-2">Our History</h3>
+                    <h2 class="text-3xl font-bold text-primary mb-6">A Legacy of 28 Years</h2>
+                    <p class="text-slate-600 mb-4 leading-relaxed">
+                        Established in 1995, Salahuddin Ahmed School and College started with a humble beginning of only
+                        50 students and 5 teachers. Over the decades, we have grown into a premier institution with over
+                        2,500 students.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Our journey has been marked by consistent academic success, winning National Awards in 2010 and
+                        2018. We continue to upgrade our facilities to meet modern educational standards.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-primary text-slate-300 py-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2023 Salahuddin Ahmed School and College.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        lucide.createIcons();
+        AOS.init({ once: true, offset: 50, duration: 800 });
+    </script>
+</body>
+
+</html>

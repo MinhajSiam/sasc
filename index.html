@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salahuddin Ahmed School and College</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0f172a', // Deep Navy
+                        secondary: '#f59e0b', // Amber/Golden
+                        accent: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for Glassmorphism & Ticker */
+        .glass {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .hero-overlay {
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.7));
+        }
+
+        /* Notice Board Scrollbar */
+        .notice-board::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .notice-board::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        .notice-board::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .notice-board::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-800 bg-slate-50 antialiased">
+
+    <nav class="fixed w-full z-50 glass shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <!-- <i data-lucide="graduation-cap" class="h-8 w-8 text-secondary"></i> -->
+                    <img src="images/sascLogo-removebg-preview.png" class="h-16 w-20 text-secondary" alt="sasc_logo">
+                    <span class="font-bold text-2xl tracking-tight text-primary">SASC</span>
+                </div>
+
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#" class="text-slate-600 hover:text-secondary font-medium transition">Home</a>
+                    <a href="#about" class="text-slate-600 hover:text-secondary font-medium transition">About Us</a>
+                    <a href="#academics"
+                        class="text-slate-600 hover:text-secondary font-medium transition">Academics</a>
+                    <a href="#notice" class="text-slate-600 hover:text-secondary font-medium transition">Notices</a>
+                    <a href="#gallery" class="text-slate-600 hover:text-secondary font-medium transition">Gallery</a>
+                    <a href="#contact" class="text-slate-600 hover:text-secondary font-medium transition">Contact</a>
+
+                    <button
+                        class="bg-primary hover:bg-slate-800 text-white px-5 py-2.5 rounded-lg font-medium transition shadow-lg hover:shadow-xl flex items-center gap-2 transform hover:-translate-y-0.5">
+                        <i data-lucide="user-circle" class="w-4 h-4"></i>
+                        Student Login
+                    </button>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-primary focus:outline-none">
+                        <i data-lucide="menu" class="h-8 w-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#"
+                    class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-secondary hover:bg-slate-50 rounded-md">Home</a>
+                <a href="#about"
+                    class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-secondary hover:bg-slate-50 rounded-md">About
+                    Us</a>
+                <a href="#academics"
+                    class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-secondary hover:bg-slate-50 rounded-md">Academics</a>
+                <a href="#notice"
+                    class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-secondary hover:bg-slate-50 rounded-md">Notices</a>
+                <a href="#contact"
+                    class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-secondary hover:bg-slate-50 rounded-md">Contact</a>
+                <button
+                    class="w-full mt-4 bg-primary text-white px-4 py-3 rounded-lg font-medium flex justify-center items-center gap-2">
+                    <i data-lucide="user-circle" class="w-4 h-4"></i> Student Login
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="images/banner2.jpg" alt="School Campus" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+            <div
+                class="inline-block px-4 py-1 mb-4 rounded-full border border-secondary/30 bg-secondary/10 backdrop-blur-sm">
+                <span class="text-secondary font-semibold text-sm uppercase tracking-wider">Est. 2002</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+                Welcome to <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">Salahuddin
+                    Ahmed</span> <br>
+                School & College
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto font-light">
+                Empowering future leaders with excellence in education, moral values, and modern innovation.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                    class="bg-secondary hover:bg-amber-600 text-white text-lg px-8 py-3 rounded-lg font-semibold transition shadow-lg hover:shadow-amber-500/20 transform hover:-translate-y-1">
+                    Apply Now
+                </button>
+                <button
+                    class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-3 rounded-lg font-semibold transition transform hover:-translate-y-1">
+                    Learn More
+                </button>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white/50">
+            <i data-lucide="chevron-down" class="w-8 h-8"></i>
+        </div>
+    </header>
+
+    <section class="py-16 bg-white relative -mt-20 z-20 container mx-auto px-4">
+        <div class="bg-white rounded-2xl shadow-xl p-8 grid grid-cols-2 md:grid-cols-4 gap-8 border border-slate-100">
+            <div class="text-center" data-aos="fade-up" data-aos-delay="0">
+                <div class="text-4xl font-bold text-primary mb-2 counter" data-target="2500">0</div>
+                <div class="text-sm text-slate-500 uppercase tracking-wide font-medium">Total Students</div>
+            </div>
+            <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-4xl font-bold text-primary mb-2 counter" data-target="120">0</div>
+                <div class="text-sm text-slate-500 uppercase tracking-wide font-medium">Expert Teachers</div>
+            </div>
+            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-4xl font-bold text-primary mb-2 counter" data-target="28">0</div>
+                <div class="text-sm text-slate-500 uppercase tracking-wide font-medium">Years History</div>
+            </div>
+            <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-4xl font-bold text-secondary mb-2 counter" data-target="450">0</div>
+                <div class="text-sm text-slate-500 uppercase tracking-wide font-medium">GPA 5 Achievers</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-50" id="about">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+                <div class="lg:col-span-2" data-aos="fade-right">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="h-1 w-12 bg-secondary rounded-full"></div>
+                        <span class="text-secondary font-semibold uppercase tracking-wider text-sm">Welcome
+                            Message</span>
+                    </div>
+                    <h2 class="text-3xl font-bold text-primary mb-8">Inspiring Excellence Since 1995</h2>
+
+                    <div
+                        class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100 flex flex-col md:flex-row gap-8 items-start">
+                        <div class="w-full md:w-1/3 flex-shrink-0 relative">
+                            <div class="absolute inset-0 bg-secondary rounded-xl transform translate-x-2 translate-y-2">
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Principal" class="relative rounded-xl w-full h-auto object-cover shadow-sm">
+                        </div>
+                        <div class="flex-1">
+                            <i data-lucide="quote" class="w-10 h-10 text-secondary/20 mb-4 fill-current"></i>
+                            <p class="text-slate-600 leading-relaxed mb-6 italic">
+                                "At Salahuddin Ahmed School and College, we believe education is not just about academic
+                                success, but about shaping character. We are committed to providing an environment where
+                                every student can discover their potential and become a responsible global citizen."
+                            </p>
+                            <div>
+                                <h4 class="text-primary font-bold text-lg">Dr. Mahbubur Rahman</h4>
+                                <p class="text-secondary text-sm font-medium">Principal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-1" id="notice" data-aos="fade-left">
+                    <div
+                        class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden h-full flex flex-col">
+                        <div class="bg-primary p-5 flex justify-between items-center">
+                            <h3 class="text-white font-bold text-lg flex items-center gap-2">
+                                <i data-lucide="bell" class="w-5 h-5 text-secondary"></i> Notice Board
+                            </h3>
+                            <span class="text-xs text-slate-400 bg-slate-800 px-2 py-1 rounded">Live Updates</span>
+                        </div>
+
+                        <div class="p-4 overflow-y-auto notice-board" style="max-h: 400px;">
+                            <div
+                                class="mb-4 pb-4 border-b border-slate-100 last:border-0 hover:bg-slate-50 p-2 rounded transition cursor-pointer group">
+                                <div class="flex gap-3">
+                                    <div
+                                        class="flex-shrink-0 text-center bg-slate-100 rounded px-2 py-1 h-fit group-hover:bg-secondary/10 transition">
+                                        <span
+                                            class="block text-xs font-bold text-slate-500 group-hover:text-secondary">OCT</span>
+                                        <span
+                                            class="block text-lg font-bold text-primary group-hover:text-secondary">25</span>
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="text-sm font-semibold text-slate-800 group-hover:text-primary transition">
+                                            Half-Yearly Exam Routine Published</h4>
+                                        <p class="text-xs text-slate-500 mt-1 line-clamp-2">Download the PDF routine for
+                                            classes 6 to 10 from the student portal.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="mb-4 pb-4 border-b border-slate-100 last:border-0 hover:bg-slate-50 p-2 rounded transition cursor-pointer group">
+                                <div class="flex gap-3">
+                                    <div
+                                        class="flex-shrink-0 text-center bg-slate-100 rounded px-2 py-1 h-fit group-hover:bg-secondary/10 transition">
+                                        <span
+                                            class="block text-xs font-bold text-slate-500 group-hover:text-secondary">OCT</span>
+                                        <span
+                                            class="block text-lg font-bold text-primary group-hover:text-secondary">28</span>
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="text-sm font-semibold text-slate-800 group-hover:text-primary transition">
+                                            Science Fair Registration</h4>
+                                        <p class="text-xs text-slate-500 mt-1">Last date for project submission
+                                            registration is Nov 1st.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="mb-4 pb-4 border-b border-slate-100 last:border-0 hover:bg-slate-50 p-2 rounded transition cursor-pointer group">
+                                <div class="flex gap-3">
+                                    <div
+                                        class="flex-shrink-0 text-center bg-slate-100 rounded px-2 py-1 h-fit group-hover:bg-secondary/10 transition">
+                                        <span
+                                            class="block text-xs font-bold text-slate-500 group-hover:text-secondary">NOV</span>
+                                        <span
+                                            class="block text-lg font-bold text-primary group-hover:text-secondary">05</span>
+                                    </div>
+                                    <div>
+                                        <h4
+                                            class="text-sm font-semibold text-slate-800 group-hover:text-primary transition">
+                                            Guardians Meeting (Class X)</h4>
+                                        <p class="text-xs text-slate-500 mt-1">Mandatory meeting regarding test
+                                            examinations.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 border-t border-slate-100 bg-slate-50 text-center">
+                            <a href="#"
+                                class="text-sm font-medium text-primary hover:text-secondary transition flex items-center justify-center gap-1">
+                                View All Notices <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white" id="academics">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-secondary font-semibold uppercase tracking-wider text-sm">Why Choose Us</span>
+                <h2 class="text-3xl font-bold text-primary mt-2">World-Class Facilities</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:border-secondary/20 transition duration-300 bg-slate-50 hover:bg-white"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <div
+                        class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary transition duration-300">
+                        <i data-lucide="microscope" class="w-7 h-7 text-primary group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Modern Science Labs</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Fully equipped physics, chemistry, and biology
+                        labs fostering hands-on learning experiences.</p>
+                </div>
+
+                <div class="group p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:border-secondary/20 transition duration-300 bg-slate-50 hover:bg-white"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-secondary transition duration-300">
+                        <i data-lucide="book-open" class="w-7 h-7 text-amber-600 group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Digital Library</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">A vast collection of 10,000+ books and digital
+                        resources with quiet study zones.</p>
+                </div>
+
+                <div class="group p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:border-secondary/20 transition duration-300 bg-slate-50 hover:bg-white"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-600 transition duration-300">
+                        <i data-lucide="monitor" class="w-7 h-7 text-green-600 group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Computer Club</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">State-of-the-art IT labs offering coding,
+                        robotics, and design courses for students.</p>
+                </div>
+
+                <div class="group p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:border-secondary/20 transition duration-300 bg-slate-50 hover:bg-white"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-red-500 transition duration-300">
+                        <i data-lucide="trophy" class="w-7 h-7 text-red-500 group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Sports & Athletics</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Expansive playground and indoor sports complex for
+                        physical development.</p>
+                </div>
+
+                <div class="group p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:border-secondary/20 transition duration-300 bg-slate-50 hover:bg-white"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <div
+                        class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-600 transition duration-300">
+                        <i data-lucide="bus" class="w-7 h-7 text-purple-600 group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Transport Facility</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Safe and secure bus service covering major routes
+                        across the city for students.</p>
+                </div>
+
+                <div class="group p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:border-secondary/20 transition duration-300 bg-slate-50 hover:bg-white"
+                    data-aos="fade-up" data-aos-delay="500">
+                    <div
+                        class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-orange-500 transition duration-300">
+                        <i data-lucide="music" class="w-7 h-7 text-orange-500 group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Cultural Academy</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Dedicated training for debate, music, dance, and
+                        arts to nurture creativity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-50" id="gallery">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <span class="text-secondary font-semibold uppercase tracking-wider text-sm">Campus Life</span>
+                    <h2 class="text-3xl font-bold text-primary mt-2">Photo Gallery</h2>
+                </div>
+                <a href="#"
+                    class="hidden md:flex items-center gap-1 text-primary hover:text-secondary font-medium transition">
+                    View All Photos <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 h-[600px]">
+                <div class="col-span-2 row-span-2 relative group overflow-hidden rounded-2xl cursor-pointer"
+                    data-aos="zoom-in">
+                    <img src="https://images.unsplash.com/photo-1577896334614-201b31d50863?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Students in library"
+                        class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <span class="text-white font-medium">Library Study Session</span>
+                    </div>
+                </div>
+
+                <div class="col-span-1 row-span-1 relative group overflow-hidden rounded-2xl cursor-pointer"
+                    data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Classroom"
+                        class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm">Interactive Classrooms</span>
+                    </div>
+                </div>
+
+                <div class="col-span-1 row-span-1 relative group overflow-hidden rounded-2xl cursor-pointer"
+                    data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Sports" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm">Annual Sports Day</span>
+                    </div>
+                </div>
+
+                <div class="col-span-2 row-span-1 relative group overflow-hidden rounded-2xl cursor-pointer"
+                    data-aos="zoom-in" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Science Lab"
+                        class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                        <span class="text-white font-medium">Science Laboratory</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary text-slate-300 pt-20 pb-10" id="contact">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <i data-lucide="graduation-cap" class="h-8 w-8 text-secondary"></i>
+                        <span class="font-bold text-2xl text-white">SASC</span>
+                    </div>
+                    <p class="text-sm leading-relaxed text-slate-400 mb-6">
+                        Dedicated to building character and academic excellence. Join us in shaping the leaders of
+                        tomorrow.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-secondary hover:text-white transition">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-secondary hover:text-white transition">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-secondary hover:text-white transition">
+                            <i data-lucide="youtube" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-6">Quick Links</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-secondary transition">Academic Calendar</a></li>
+                        <li><a href="#" class="hover:text-secondary transition">Admission Info</a></li>
+                        <li><a href="#" class="hover:text-secondary transition">Teachers Portal</a></li>
+                        <li><a href="#" class="hover:text-secondary transition">Job Opportunities</a></li>
+                        <li><a href="#" class="hover:text-secondary transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-6">Contact Us</h3>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-secondary mt-0.5"></i>
+                            <span>123 Education Road, Block B,<br>Dhaka-1230, Bangladesh</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-secondary"></i>
+                            <span>+880 1234-567890</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-secondary"></i>
+                            <span>info@sasc.edu.bd</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-6">Stay Updated</h3>
+                    <p class="text-xs text-slate-400 mb-4">Subscribe to receive exam notices and news.</p>
+                    <form class="space-y-2">
+                        <input type="email" placeholder="Your Email Address"
+                            class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-secondary transition text-sm">
+                        <button
+                            class="w-full bg-secondary hover:bg-amber-600 text-white font-medium py-3 rounded-lg transition">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+                <p>&copy; 2023 Salahuddin Ahmed School and College. All rights reserved.</p>
+                <p>Designed with excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800,
+        });
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Sticky Navbar Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md', 'bg-white/95');
+                navbar.classList.remove('glass');
+            } else {
+                navbar.classList.remove('shadow-md', 'bg-white/95');
+                navbar.classList.add('glass');
+            }
+        });
+
+        // Counter Animation Logic
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; // The lower the slower
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+
+                    // Lower inc to slow and higher to slow
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        // Trigger Counter Animation when Stats Section is in view
+        let counted = false;
+        const statsSection = document.querySelector('.counter').closest('section');
+
+        window.addEventListener('scroll', () => {
+            if (!statsSection) return;
+            const sectionPos = statsSection.getBoundingClientRect().top;
+            const screenPos = window.innerHeight;
+
+            if (sectionPos < screenPos && !counted) {
+                animateCounters();
+                counted = true;
+            }
+        });
+
+    </script>
+</body>
+
+</html>
