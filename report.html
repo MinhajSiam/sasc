@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ডেইলি শিফ্ট রিপোর্ট</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: 'Kalpurush', Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* এই অংশটুকু শুধু PDF এ যাবে */
+        #report-content {
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .header h2 {
+            margin: 0 0 5px 0;
+            font-size: 24px;
+        }
+
+        .header h4 {
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+
+        .radio-group {
+            margin-bottom: 10px;
+        }
+
+        .radio-group label {
+            font-weight: normal;
+            display: inline;
+            margin-right: 15px;
+        }
+
+        .section-title {
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-left: 4px solid #333;
+        }
+
+        .signature-section {
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .signature-box {
+            text-align: center;
+            width: 40%;
+        }
+
+        .signature-line {
+            border-top: 1px dashed #333;
+            margin-bottom: 5px;
+            margin-top: 40px;
+            /* স্বাক্ষরের জন্য ফাঁকা জায়গা */
+        }
+
+        .btn-download {
+            display: block;
+            width: 200px;
+            margin: 30px auto 0;
+            padding: 10px;
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-download:hover {
+            background-color: #004494;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="report-content">
+            <div class="header">
+                <h2>সালাহ্‌উদ্দিন আহমেদ স্কুল অ্যান্ড কলেজ</h2>
+                <h4>প্রতিদিনের শিফ্ট রিপোর্ট (মর্নিং শিফ্ট – স্কুল শাখা)</h4>
+            </div>
+
+            <div class="form-row">
+                <div style="width: 48%;">
+                    <label>তারিখ:</label>
+                    <input type="date" id="reportDate">
+                </div>
+                <div style="width: 48%;">
+                    <label>শিফ্ট ইনচার্জের নাম:</label>
+                    <input type="text" id="inchargeName" placeholder="নাম লিখুন">
+                </div>
+            </div>
+
+            <div class="section-title">১. প্রাত্যহিক সমাবেশ (এসেম্বলি) ও শৃঙ্খলা</div>
+            <div class="form-group radio-group">
+                <label><b>পিটি/প্যারেড অনুষ্ঠিত হয়েছে কি না?</b></label><br>
+                <label><input type="radio" name="pt" value="হ্যাঁ"> হ্যাঁ</label>
+                <label><input type="radio" name="pt" value="না"> না</label>
+            </div>
+            <div class="form-group radio-group">
+                <label><b>শিক্ষার্থীদের ইউনিফর্ম ও পরিচ্ছন্নতা:</b></label><br>
+                <label><input type="radio" name="uniform" value="সন্তোষজনক"> সন্তোষজনক</label>
+                <label><input type="radio" name="uniform" value="অসন্তোষজনক"> অসন্তোষজনক</label>
+            </div>
+            <div class="form-group">
+                <label>শৃঙ্খলার সংক্ষিপ্ত অবস্থা:</label>
+                <textarea rows="2" placeholder="বিস্তারিত লিখুন..."></textarea>
+            </div>
+
+            <div class="section-title">২. উপস্থিতি সংক্রান্ত তথ্য</div>
+            <div class="form-row">
+                <div style="width: 30%;">
+                    <label>মোট শিক্ষক:</label>
+                    <input type="number" placeholder="সংখ্যা">
+                </div>
+                <div style="width: 30%;">
+                    <label>উপস্থিত:</label>
+                    <input type="number" placeholder="সংখ্যা">
+                </div>
+                <div style="width: 30%;">
+                    <label>অনুপস্থিত:</label>
+                    <input type="number" placeholder="সংখ্যা">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>বিকল্প ক্লাস (Substitution) দেওয়া হয়েছে কি না?</label>
+                <input type="text" placeholder="হ্যাঁ (কয়টি) / না">
+            </div>
+
+            <div class="section-title">৩. একাডেমিক ও প্রশাসনিক পর্যবেক্ষণ</div>
+            <div class="form-group radio-group">
+                <label><b>শ্রেণিকক্ষ ও আঙিনার পরিচ্ছন্নতা:</b></label><br>
+                <label><input type="radio" name="cleanliness" value="ভালো"> ভালো</label>
+                <label><input type="radio" name="cleanliness" value="সাধারণ"> সাধারণ</label>
+                <label><input type="radio" name="cleanliness" value="জরুরি ব্যবস্থা প্রয়োজন"> জরুরি ব্যবস্থা
+                    প্রয়োজন</label>
+            </div>
+            <div class="form-group">
+                <label>পাঠদান কার্যক্রম:</label>
+                <input type="text" placeholder="রুটিন অনুযায়ী চলছে / ব্যাহত হয়েছে (কারণ)">
+            </div>
+
+            <div class="section-title">৪. বিশেষ ঘটনা ও সুপারিশ</div>
+            <div class="form-group">
+                <label>বিশেষ ঘটনা বা সমস্যা (যদি থাকে):</label>
+                <textarea rows="2" placeholder="শিক্ষার্থীদের অসুস্থতা, শৃঙ্খলাভঙ্গ ইত্যাদি..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>সুপারিশ/প্রয়োজনীয় ব্যবস্থা:</label>
+                <textarea rows="2" placeholder="আপনার সুপারিশ লিখুন..."></textarea>
+            </div>
+
+            <div class="signature-section">
+                <div class="signature-box">
+                    <div class="signature-line"></div>
+                    <b>শিফ্ট ইনচার্জের স্বাক্ষর</b>
+                </div>
+                <div class="signature-box">
+                    <div class="signature-line"></div>
+                    <b>অধ্যক্ষ মহোদয়ের স্বাক্ষর</b>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn-download" onclick="downloadPDF()">Download as PDF</button>
+
+    </div>
+
+    <script>
+        function downloadPDF() {
+            // যেই অংশটুকু PDF হবে তা সিলেক্ট করা
+            const element = document.getElementById('report-content');
+
+            // PDF এর অপশন সেট করা
+            const opt = {
+                margin: 0.5,
+                filename: 'Daily_Shift_Report.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+
+            // PDF জেনারেট এবং ডাউনলোড
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+</body>
+
+</html>
